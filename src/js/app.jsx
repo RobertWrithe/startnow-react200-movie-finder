@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import MovieSearchContainer from './containers/MovieSearchContainer';
-import MovieDetailContainer from './containers/MovieDetailContainer';
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <h1>Hello World</h1>
-//     );
-//   }
-// }
+import MovieSearch from './routes/MovieSearch';
+import MovieDetail from './routes/MovieDetail';
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div className='container'>
-          <Route exact path='/' component={ MovieSearchContainer } />
-          <Route path='/movie/:id' component={ MovieDetailContainer } />
+          <Route exact path='/' component={ MovieSearch } />
+          <Route path='/movie/:id' component={ MovieDetail } />
         </div>
       </Router>
     )

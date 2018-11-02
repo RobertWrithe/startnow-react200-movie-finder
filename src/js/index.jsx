@@ -6,12 +6,6 @@ import promiseMiddleware from 'redux-promise-middleware';
 import reducers from './reducers';
 import App from './app';
 
-/* eslint-disable no-underscore-dangle */
-// const store = createStore(
-//   reducers,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducers, composeEnhancers(
@@ -19,8 +13,6 @@ const store = createStore(reducers, composeEnhancers(
     promiseMiddleware()
   )
 ));
-/* eslint-enable */
-
 
 render(
   <Provider store={ store }>
