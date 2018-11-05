@@ -102,7 +102,7 @@ class MovieSearch extends React.Component {
                                             results.map(result => (
                                                 <tr key={result.imdbID}>
                                                     <td><img src={result.Poster} /></td>
-                                                    <td><strong>{result.Title}</strong></td>
+                                                    <td id='movie-title'><strong>{result.Title}</strong></td>
                                                     <td>{result.Year}</td>
                                                     <td className='text-right'>
                                                         <Link to={'/movie/' + result.imdbID}>

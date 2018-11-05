@@ -35,7 +35,7 @@ class MovieDetail extends React.Component {
                                     type='button'
                                     id='back-button'
                                     value='none'
-                                    onClick={this.handleClearResults}
+                                    onClick={this.handleBackToResults}
                                 >Back to Results</button>
                             </Link>
                         </div>
@@ -44,7 +44,7 @@ class MovieDetail extends React.Component {
                 <div className='row d-flex justify-content-center'>
                     <div className='col-11 bg-white py-4'>
                         <div className='row d-flex justify-content-center mb-4'>
-                            <div className='col-3'>
+                            <div className='col-3 pr-0'>
                                 <div className='card'>
                                     <img className='card-img-top' src={details.Poster} alt={details.Title + ' Poster'} />
                                 </div>
@@ -76,7 +76,7 @@ class MovieDetail extends React.Component {
                                         type='button'
                                         id='back-button-block'
                                         value='none'
-                                        onClick={this.handleClearResults}
+                                        onClick={this.handleBackToResults}
                                     >Back to Results</button>
                                 </Link>
                             </div>
