@@ -3,7 +3,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import MovieSearch from './routes/MovieSearch';
 import MovieDetail from './routes/MovieDetail';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <Router>

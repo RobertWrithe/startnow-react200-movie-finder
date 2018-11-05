@@ -12,7 +12,7 @@ export default function reducers (state = defaultState, action) {
         case 'UPDATE_SEARCH_INPUT': {
             return {
                 ...state,
-                searchInput: payload.searchInput
+                searchInput: payload
             };
         }
         
@@ -20,7 +20,7 @@ export default function reducers (state = defaultState, action) {
             return {
                 searchInput: '',
                 pending: false, 
-                results: payload.results,
+                results: payload,
                 details: 'none'
             };
         }
@@ -45,7 +45,7 @@ export default function reducers (state = defaultState, action) {
             return {
                 ...state,
                 pending: false, 
-                details: payload.details
+                details: payload
             };
         }
         
@@ -61,6 +61,20 @@ export default function reducers (state = defaultState, action) {
               ...state,
               pending: false,
               details: 'fail'
+            };
+        }
+
+        case 'BACK_TO_RESULTS': {
+            return {
+              ...state,
+              details: payload
+            };
+        }
+
+        case 'CLEAR_RESULTS': {
+            return {
+              ...state,
+              results: payload
             };
         }
 
