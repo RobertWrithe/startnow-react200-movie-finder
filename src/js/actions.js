@@ -11,7 +11,14 @@ export function getResults(input) {
     return {
         type: 'GET_RESULTS',
         payload: axios.get(`/results/${input}`)
-            .then(res => res.data.Search )
+                .then(res => { 
+                    console.log('results res: ', res.data.Search);
+                    return res.data.Error ? 'fail' : res.data.Search; 
+                })
+                .catch((err) => {
+                    console.log('results err: ', err.message);
+                    res.status(404).send(err.message) 
+                })
     }
 };
 
@@ -19,7 +26,14 @@ export function getDetails(input) {
     return {
         type: 'GET_DETAILS',
         payload: axios.get(`/details/${input}`)
-            .then(res => res.data )
+            .then(res => { 
+                console.log('details res: ', res.data);
+                return res.data 
+            })
+            .catch((err) => {
+                console.log('results err: ', err.message);
+                res.status(404).send(err.message) 
+        })
     }
 };
 
